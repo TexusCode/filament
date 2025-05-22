@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\Blog;
 
-use App\Filament\Resources\NewsResource\Pages;
+use App\Filament\Resources\Blog\NewsResource\Pages;
 use App\Filament\Resources\NewsResource\RelationManagers;
 use App\Models\Blog\News;
 use Filament\Forms;
@@ -16,9 +16,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class NewsResource extends Resource
 {
     protected static ?string $model = News::class;
-    protected static ?string $navigationLabel = 'Панель новости';
+    protected static ?string $navigationLabel = 'Новости';
     protected static ?string $navigationGroup = 'Блог';
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {

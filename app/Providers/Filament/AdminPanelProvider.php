@@ -11,7 +11,7 @@ use Filament\Pages\Dashboard;
 use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
 use Filament\Navigation\NavigationItem;
-use App\Filament\Resources\PostResource;
+use App\Filament\Resources\Blog\PostResource;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -29,6 +29,8 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
+            // ->sidebarWidth('20rem')
+            ->breadcrumbs(false)
             ->defaultThemeMode(ThemeMode::Dark)
             ->maxContentWidth('full')
             ->userMenuItems([

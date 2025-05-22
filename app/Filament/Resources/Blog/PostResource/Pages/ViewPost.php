@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\NewsResource\Pages;
+namespace App\Filament\Resources\Blog\PostResource\Pages;
 
-use App\Filament\Resources\NewsResource;
+use App\Filament\Resources\Blog\PostResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
 
-class ViewNews extends ViewRecord
+class ViewPost extends ViewRecord
 {
-    protected static string $resource = NewsResource::class;
-
+    protected static string $resource = PostResource::class;
     protected function getHeaderActions(): array
     {
         return [

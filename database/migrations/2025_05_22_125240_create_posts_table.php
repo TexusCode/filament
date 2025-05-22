@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('category_id');
+            $table->longText('cover');
+            $table->string('title');
+            $table->string('slug');
+            $table->longText('content');
+            $table->longText('tags');
+            $table->longText('video')->nullable();
+            $table->boolean('status');
+            $table->bigInteger('views')->default(0);
             $table->timestamps();
         });
     }
