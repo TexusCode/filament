@@ -32,7 +32,6 @@ class AdminPanelProvider extends PanelProvider
             // ->sidebarWidth('20rem')
             ->breadcrumbs(false)
             ->darkMode(false)
-            ->defaultThemeMode(ThemeMode::Dark)
             ->maxContentWidth('full')
             ->userMenuItems([
                 MenuItem::make()
