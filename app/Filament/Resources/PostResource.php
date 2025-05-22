@@ -2,27 +2,42 @@
 
 namespace App\Filament\Resources;
 
+use App\Models\Blog\Posts;
 use Filament\Forms;
-use App\Models\Post;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Facades\Filament;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Infolists\Components\TextEntry;
 use App\Filament\Resources\PostResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PostResource\RelationManagers;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Section;
 
 class PostResource extends Resource
 {
-    protected static ?string $model = Post::class;
-    protected static ?string $navigationGroup = 'Settings';
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $model = Posts::class;
+    protected static ?string $navigationLabel = 'Панель статьи';
+    protected static ?string $navigationGroup = 'Блог';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                \Filament\Infolists\Components\Section::make()
+                    ->schema(
+                        [
+                            TextEntry::make('title'),
+                        ]
+                    )
+            ]);
+    }
     public static function getEloquentQuery(): Builder
     {
         $user = Filament::auth()->user();
@@ -50,15 +65,7 @@ class PostResource extends Resource
                                 [
                                     TextInput::make('title')
                                 ]
-                            )->columnSpan(3),
-                        Section::make('hello')
-                            ->description('lorem5  ')
-                            ->columns(2)
-                            ->schema(
-                                [
-                                    TextInput::make('title')
-                                ]
-                            )->columnSpan(3)
+                            )
                     ])
             ]);
     }

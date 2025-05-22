@@ -1,7 +1,63 @@
 @import '../../../../vendor/filament/filament/resources/css/theme.css';
 
 @config 'tailwind.config.js';
-
-.fi-simple-main{
- @apply p-10;
+.fi-body{
+    @apply bg-slate-100;
+}
+.fi-topbar nav{
+    @apply lg:bg-slate-100 border-b-0 lg:dark:bg-gray-950;
+}
+.fi-sidebar-group-items{
+    @apply gap-y-1;
+}
+.fi-sidebar-nav{
+ @apply bg-white dark:bg-gray-900 lg:rounded-b-2xl p-2;
+}
+.fi-sidebar-header{
+ @apply bg-white dark:bg-gray-900 lg:rounded-t-2xl p-4;
+}
+.fi-sidebar {
+ @apply p-0 lg:p-4;
+}
+.fi-sidebar-nav-groups {
+ @apply p-4 rounded-2xl gap-y-1;
+}
+.fi-sidebar-item-label {
+ @apply text-slate-900 text-base;
+}
+.fi-sidebar-item-icon {
+ @apply text-slate-900 stroke-[2px];
+}
+.fi-sidebar-item-button {
+ @apply hover:bg-green-500 duration-300 rounded-xl;
+}
+.fi-sidebar-item-button:hover .fi-sidebar-item-label{
+ @apply text-white duration-300 ;
+}
+.fi-sidebar-item-button:hover .fi-sidebar-item-icon{
+ @apply text-white duration-300;
+}
+.fi-sidebar-item-active a{
+ @apply bg-green-500;
+}
+.fi-sidebar-item-active a .fi-sidebar-item-icon{
+ @apply text-white;
+}
+.fi-sidebar-item-active a .fi-sidebar-item-label{
+ @apply text-white;
+}
+.fi-main{
+ @apply p-4;
+}
+.fi-page section{
+ @apply py-4;
+}
+.fi-breadcrumbs{
+ @apply mb-4;
+}
+.fi-sidebar-group-button{
+ @apply py-0;
+}
+.fi-sidebar-group-label{
+ @apply text-base;
 }
