@@ -29,7 +29,6 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
-            // ->sidebarWidth('20rem')
             ->breadcrumbs(false)
             ->darkMode(false)
             ->maxContentWidth('full')
