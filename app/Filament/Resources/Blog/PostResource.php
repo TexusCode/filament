@@ -130,6 +130,7 @@ class PostResource extends Resource
                 TextColumn::make('author.name')
                     ->numeric()
                     ->sortable()
+                    ->searchable()
                     ->label('Автор'),
                 TextColumn::make('category.name')
                     ->label('Категория')
